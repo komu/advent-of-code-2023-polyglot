@@ -6,7 +6,7 @@ type ReverseString<S> = S extends `${infer X}${infer Xs}` ? `${ReverseString<Xs>
 type FirstDigit1<S> = S extends `${infer X}${infer Xs}` ? X extends `${infer D extends Digit}` ? D : FirstDigit1<Xs> : never;
 
 type CalibrationValue1<S> = Add<Multiply<10, FirstDigit1<S>>, FirstDigit1<ReverseString<S>>>;
-type Part1<S> = S extends `${infer L}\n${infer Ls}` ? Add<CalibrationValue1<L>, Part1<Ls>> : CalibrationValue1<S>;
+type Part1<S, Acc extends number = 0> = S extends `${infer L}\n${infer Ls}` ? Part1<Ls, Add<Acc, CalibrationValue1<L>>> : Add<Acc, CalibrationValue1<S>>;
 
 // @formatter:off
 type FirstDigit2<S> =
@@ -40,7 +40,7 @@ type LastDigit2<S> =
 // @formatter:on
 
 type CalibrationValue2<S> = Add<Multiply<10, FirstDigit2<S>>, LastDigit2<ReverseString<S>>>;
-type Part2<S> = S extends `${infer L}\n${infer Ls}` ? Add<CalibrationValue2<L>, Part2<Ls>> : CalibrationValue2<S>;
+type Part2<S, Acc extends number = 0> = S extends `${infer L}\n${infer Ls}` ? Part2<Ls, Add<Acc, CalibrationValue2<L>>> : Add<Acc, CalibrationValue2<S>>;
 
 type Example1 = `1abc2
 pqr3stu8vwx
@@ -59,5 +59,5 @@ type Data = `your data here`;
 
 const testExample1: Part1<Example1> = 142;
 const testExample2: Part2<Example2> = 281;
-const part1: Part2<Data> = undefined;
+const part1: Part1<Data> = undefined;
 const part2: Part2<Data> = undefined;
