@@ -1,0 +1,25 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AoC 2023 - Day 6</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    WebAssembly.instantiateStreaming(fetch('day6.wasm')).then(obj => {
+        const memory = obj.instance.exports.memory;
+
+        const times = new Int32Array(memory.buffer, 0, 3)
+        const distances = new Int32Array(memory.buffer, 128, 3)
+        times.set([7, 15, 30]);
+        distances.set([9, 40, 200]);
+
+        const part1 = obj.instance.exports.part1(times.byteOffset, distances.byteOffset, 3);
+        const part2 = obj.instance.exports.part2(71530n, 940200n);
+
+        document.getElementById("result").innerText = `part1: ${part1}, part2: ${part2}`;
+    });
+</script>
+</body>
+</html>

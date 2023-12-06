@@ -9,6 +9,7 @@ Attempt to implement every day of [Advent of Code 2023](http://adventofcode.com/
 |  [3](https://adventofcode.com/2023/day/3)  | [day3.sql](src/day3/day3.sql) | SQL                      | Tested on PostgreSQL                                                                               |
 |  [4](https://adventofcode.com/2023/day/4)  | [day4.be](src/day4/day4.be)   | Befunge                  | Only part 1 for now                                                                                |
 |  [5](https://adventofcode.com/2023/day/5)  | [day5.elm](src/day5/day5.elm) | Elm                      |                                                                                                    |
+|  [6](https://adventofcode.com/2023/day/6)  | [day6.wat](src/day6/day6.wat) | WASM                     |                                                                                                    |
 
 ## Previously
 
