@@ -27,7 +27,7 @@ type LastDigit2<S> =
     S extends `${string}${infer D extends Digit}` ? D
     : S extends `eno${string}` ? 1
     : S extends `owt${string}` ? 2
-    : S extends `eerth${string}` ? 3
+    : S extends `eerht${string}` ? 3
     : S extends `ruof${string}` ? 4
     : S extends `evif${string}` ? 5
     : S extends `xis${string}` ? 6
