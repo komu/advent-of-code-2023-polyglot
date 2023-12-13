@@ -10,7 +10,7 @@ Attempt to implement every day of [Advent of Code 2023](http://adventofcode.com/
 | [4](https://adventofcode.com/2023/day/4) | [day4.be](src/day4/day4.be)         | Befunge                  | Only part 1 for now                                                                                |
 | [5](https://adventofcode.com/2023/day/5) | [day5.elm](src/day5/day5.elm)       | Elm                      |                                                                                                    |
 | [6](https://adventofcode.com/2023/day/6) | [day6.wat](src/day6/day6.wat)       | WASM                     |                                                                                                    |
-| [7](https://adventofcode.com/2023/day/7) |                                     |                          |                                                                                                    |
+| [7](https://adventofcode.com/2023/day/7) | [day7.ml](src/day7/day7.ml)         | OCaml                    |                                                                                                    |
 | [8](https://adventofcode.com/2023/day/8) | [day8.factor](src/day8/day8.factor) | Factor                   | Only part 1 for now                                                                                |
 | [9](https://adventofcode.com/2023/day/9) | [day9.R](src/day9/day9.R)           | R                        |                                                                                                    |
 
