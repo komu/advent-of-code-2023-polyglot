@@ -13,7 +13,21 @@ Attempt to implement every day of [Advent of Code 2023](http://adventofcode.com/
 |  [7](https://adventofcode.com/2023/day/7)  | [day7.ml](src/day7/day7.ml)         | OCaml                    |                                                                                                    |
 |  [8](https://adventofcode.com/2023/day/8)  | [day8.factor](src/day8/day8.factor) | Factor                   | Only part 1 for now                                                                                |
 |  [9](https://adventofcode.com/2023/day/9)  | [day9.R](src/day9/day9.R)           | R                        |                                                                                                    |
+| [10](https://adventofcode.com/2023/day/10) |                                     |                          |                                                                                                    |
+| [11](https://adventofcode.com/2023/day/11) | [day11.c](src/day11/day11.c)        | C                        |                                                                                                    |
+| [12](https://adventofcode.com/2023/day/12) |                                     |                          |                                                                                                    |
+| [13](https://adventofcode.com/2023/day/13) |                                     |                          |                                                                                                    |
 | [14](https://adventofcode.com/2023/day/14) | [day14.jl](src/day14/day14.jl)      | Julia                    |                                                                                                    |
+| [15](https://adventofcode.com/2023/day/15) |                                     |                          |                                                                                                    |
+| [16](https://adventofcode.com/2023/day/16) |                                     |                          |                                                                                                    |
+| [17](https://adventofcode.com/2023/day/17) |                                     |                          |                                                                                                    |
+| [18](https://adventofcode.com/2023/day/18) |                                     |                          |                                                                                                    |
+| [19](https://adventofcode.com/2023/day/19) |                                     |                          |                                                                                                    |
+| [21](https://adventofcode.com/2023/day/21) |                                     |                          |                                                                                                    |
+| [22](https://adventofcode.com/2023/day/22) |                                     |                          |                                                                                                    |
+| [23](https://adventofcode.com/2023/day/23) |                                     |                          |                                                                                                    |
+| [24](https://adventofcode.com/2023/day/24) |                                     |                          |                                                                                                    |
+| [25](https://adventofcode.com/2023/day/25) |                                     |                          |                                                                                                    |
 
 ## Previously
 
