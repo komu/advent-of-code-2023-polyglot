@@ -1,26 +1,29 @@
-function read_platform(filename)
+const Platform = Matrix{Char}
+const Vec2 = Tuple{Int64, Int64}
+
+function read_platform(filename::AbstractString)
     open(filename) do file
         lines = collect.(collect(eachline(file)))
         permutedims(hcat(lines...))
     end
 end
 
-function Base.getindex(m::Matrix{Char}, p::Vector{Int64})
+function Base.getindex(m::Platform, p::Vec2)
     (x,y) = p
     m[y, x]
 end
 
-function Base.setindex!(m::Matrix{Char}, value::Char, p::Vector{Int64})
+function Base.setindex!(m::Platform, value::Char, p::Vec2)
     (x,y) = p
     m[y, x] = value
 end
 
-function in_bounds(pl, p)
+function in_bounds(pl::Platform, p::Vec2)
     (x,y) = p
     checkbounds(Bool, pl, y, x)
 end
 
-function tilt!(platform, v)
+function tilt!(platform::Platform, v::Vec2)
     (height, width) = size(platform)
     (dx, dy) = v
     xs = (dx < 0) ? (2:width) : (dx > 0) ? (width - 1:-1:1) : (1:width)
@@ -28,28 +31,28 @@ function tilt!(platform, v)
 
     for y in ys
         for x in xs
-            p = [x, y]
+            p = (x, y)
             if platform[p] == 'O'
-                pp = p + v
+                pp = p .+ v
 
                 while in_bounds(platform, pp) && platform[pp] == '.'
-                    pp += v
+                    pp = pp .+ v
                 end
 
                 platform[p] = '.'
-                platform[pp - v] = 'O'
+                platform[pp .- v] = 'O'
             end
         end
     end
 end
 
-function cycle(platform)
+function cycle(platform::Platform)
     copy = deepcopy(platform)
-    tilt!.((copy,), [[0, -1], [-1, 0], [0, 1], [1, 0]])
+    tilt!.((copy,), [(0, -1), (-1, 0), (0, 1), (1, 0)])
     copy
 end
 
-function load(platform)
+function load(platform::Platform)
     sum = 0
     (height, _) = size(platform)
     for (index, row) in enumerate(eachrow(platform))
@@ -60,15 +63,12 @@ function load(platform)
     sum
 end
 
-function part1(file)
-    platform = read_platform(file)
+function part1(platform::Platform)
     tilt!(platform, [0, -1])
     load(platform)
 end
 
-function part2(file)
-    platform = read_platform(file)
-
+function part2(platform::Platform)
     seen_indices = Dict()
     seen = []
     current = platform
@@ -90,8 +90,11 @@ function part2(file)
     end
 end
 
-@assert part1("Day14_test.txt") == 136
-@assert part2("Day14_test.txt") == 64
+test_data = read_platform("Day14_test.txt")
+real_data = read_platform("Day14.txt")
 
-println("part1 ", part1("Day14.txt"))
-println("part2 ", part2("Day14.txt"))
+@assert part1(test_data) == 136
+@assert part2(test_data) == 64
+
+println("part1 ", part1(real_data))
+println("part2 ", part2(real_data))
