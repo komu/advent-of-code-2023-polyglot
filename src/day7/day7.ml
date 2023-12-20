@@ -22,14 +22,14 @@ let analyze_hand cards =
     | best::rest -> (best + jokers)::rest
     | x -> x
   in match counts with
-  | []     -> FiveOfAKind
-  | 5::_   -> FiveOfAKind
-  | 4::_   -> FourOfAKind
-  | [_; _] -> FullHouse
-  | 3::_   -> ThreeOfAKind
+  | []        -> FiveOfAKind
+  | [5]       -> FiveOfAKind
+  | [4; 1]    -> FourOfAKind
+  | [3; 2]    -> FullHouse
+  | [3; 1; 1] -> ThreeOfAKind
   | [2; n; _] when n + jokers == 2 -> TwoPairs
-  | 2::_   -> OnePair
-  | _      -> High
+  | [2; 1; 1; 1] -> OnePair
+  | _            -> High
 
 let compare_hands (a: card list) (b: card list) =
   match compare (analyze_hand a) (analyze_hand b) with
