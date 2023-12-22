@@ -24,7 +24,7 @@ type FirstDigit2<S> =
     : never;
 
 type LastDigit2<S> =
-    S extends `${string}${infer D extends Digit}` ? D
+    S extends `${infer D extends Digit}${string}` ? D
     : S extends `eno${string}` ? 1
     : S extends `owt${string}` ? 2
     : S extends `eerht${string}` ? 3
