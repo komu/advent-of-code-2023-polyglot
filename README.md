@@ -27,7 +27,7 @@ Attempt to implement every day of [Advent of Code 2023](http://adventofcode.com/
 | [22](https://adventofcode.com/2023/day/22) |                                     |                          |                                                                                                    |
 | [23](https://adventofcode.com/2023/day/23) |                                     |                          |                                                                                                    |
 | [24](https://adventofcode.com/2023/day/24) |                                     |                          |                                                                                                    |
-| [25](https://adventofcode.com/2023/day/25) |                                     |                          |                                                                                                    |
+| [25](https://adventofcode.com/2023/day/25) | [day25.py](src/day25/day25.py)      | Python                   |                                                                                                    |
 
 ## Previously
 
